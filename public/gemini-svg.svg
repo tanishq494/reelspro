@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F0C20" />
+      <stop offset="50%" stop-color="#15102A" />
+      <stop offset="100%" stop-color="#06040A" />
+    </linearGradient>
+
+    <!-- AI Sparkle & Accent Gradient (Pink to Cyan) -->
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2A85" />
+      <stop offset="50%" stop-color="#8A2BE2" />
+      <stop offset="100%" stop-color="#00F0FF" />
+    </linearGradient>
+
+    <!-- Short Video Reel/Play Gradient -->
+    <linearGradient id="playGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#7000FF" />
+    </linearGradient>
+
+    <!-- Glow Filter for AI Sparkles and Play Button -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Drop Shadow for Phone Frame -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- App Icon Background Container -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Subtle Inner Grid / Tech Pattern Background -->
+  <rect x="32" y="32" width="448" height="448" rx="80" fill="none" stroke="url(#aiGrad)" stroke-width="1.5" opacity="0.15" />
+
+  <!-- Vertical Phone / Short Video Screen Container -->
+  <g filter="url(#dropShadow)">
+    <!-- Vertical Frame (9:16 Aspect Ratio) -->
+    <rect x="166" y="106" width="180" height="300" rx="28" fill="#18152E" stroke="url(#aiGrad)" stroke-width="4" />
+    
+    <!-- Video Reel Top & Bottom Film Trim Lines (Short Video Vibe) -->
+    <path d="M180 136 h152 M180 376 h152" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.15" />
+    
+    <!-- Vertical Speed Lines / Lightning Sweeps (Fast/Short Content) -->
+    <path d="M182 200 C210 180, 210 230, 238 210" fill="none" stroke="url(#aiGrad)" stroke-width="2" opacity="0.3" stroke-linecap="round" />
+    <path d="M274 310 C302 290, 302 340, 330 320" fill="none" stroke="url(#aiGrad)" stroke-width="2" opacity="0.3" stroke-linecap="round" />
+  </g>
+
+  <!-- Central Action: AI Play Button + Short Motion -->
+  <g filter="url(#neonGlow)">
+    <!-- Outer Pulsing Ring Segment (Short Loop Visual) -->
+    <path d="M 220 206 A 65 65 0 1 1 200 296" fill="none" stroke="url(#aiGrad)" stroke-width="6" stroke-linecap="round" stroke-dasharray="110 40" />
+
+    <!-- Play Button (Center of Screen) -->
+    <path d="M 236 218 L 296 256 L 236 294 Z" fill="url(#playGrad)" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" />
+  </g>
+
+  <!-- AI Magic Sparkles (Top Right - Generation Element) -->
+  <g filter="url(#neonGlow)">
+    <!-- Large AI Sparkle -->
+    <path d="M 356 126 Q 356 156 386 156 Q 356 156 356 186 Q 356 156 326 156 Q 356 156 356 126 Z" fill="url(#aiGrad)" />
+    
+    <!-- Small AI Sparkle Bottom Left -->
+    <path d="M 146 326 Q 146 344 164 344 Q 146 344 146 362 Q 146 344 128 344 Q 146 344 146 326 Z" fill="url(#aiGrad)" />
+
+    <!-- Tiny Accent Sparkle -->
+    <path d="M 320 210 Q 320 220 330 220 Q 320 220 320 230 Q 320 220 310 220 Q 320 220 320 210 Z" fill="#00F0FF" />
+  </g>
+
+  <!-- Sound/Waveform Bars at Bottom (AI Audio/Video Synthesis) -->
+  <g fill="url(#aiGrad)" opacity="0.85">
+    <rect x="216" y="348" width="6" height="16" rx="3" />
+    <rect x="230" y="340" width="6" height="24" rx="3" />
+    <rect x="244" y="334" width="6" height="30" rx="3" />
+    <rect x="258" y="342" width="6" height="22" rx="3" />
+    <rect x="272" y="338" width="6" height="26" rx="3" />
+    <rect x="286" y="348" width="6" height="16" rx="3" />
+  </g>
+</svg>

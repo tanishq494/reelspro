@@ -1,13 +1,11 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Roboto } from "next/font/google";
+import "./globals.css";  
+import { ClerkProvider } from "@clerk/nextjs";
+import { Provider } from "./Provider";
+import { Toaster } from "@/components/ui/toast";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
 });
 
@@ -20,9 +18,16 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${roboto.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body>
+        <ClerkProvider>
+          <Provider>
+            {children}
+          </Provider>
+          <Toaster />
+        </ClerkProvider>
+      </body>
     </html>
   );
 }
