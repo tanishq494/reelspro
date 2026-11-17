@@ -1,36 +1,3 @@
-// import { GoogleGenAI } from "@google/genai";
-
-// async function main() {
-//   const ai = new GoogleGenAI({
-//     apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY,
-//   });
-
-//   const response = await ai.models.generateContentStream({
-//     model: "gemini-3.1-flash-lite",
-//     config: {
-//       thinkingConfig: {
-//         thinkingLevel: "MINIMAL",
-//       },
-//       tools: [{ googleSearch: {} }],
-//     },
-//     contents: [
-//       {
-//         role: "user",
-//         parts: [{ text: "Explain how AI agents work." }],
-//       },
-//     ],
-//  });
-
-//   for await (const chunk of response) {
-//     if (chunk.text) {
-//       process.stdout.write(chunk.text);
-//     }
-//   }
-// }
-
-// main().catch(console.error);
-
-
 import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({
